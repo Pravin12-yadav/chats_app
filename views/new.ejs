@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your chats</title>
+    <style>
+        .new{
+            background-color: aquamarine;
+            padding: 20px;
+        }
+        .new input{
+            width:400px;
+            padding: 10px;
+        }
+        .new button{
+            padding: 10px;
+            width:100px;
+            color:white;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create your chats</h1>
+    <div class="new">
+    <form method="post" action="/chats">from:
+        <input type="text" name="from" placeholder="enter your name"><br><br>
+        to:
+        <input type="text" name="to" placeholder="enter the message where you send the message" ><br><br>
+        message:
+        <input type="text" name="message" placeholder="enter your message"><br><br>
+        <button>submit</button>
+    </form>
+    </div>
+</body>
+</html>

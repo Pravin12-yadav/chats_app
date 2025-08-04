@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update chats</title>
+    <style>
+        .up{
+            background-color: red;
+            padding: 20px;
+        }
+        .up p{
+            font-size: 20px;
+        }
+        .up button{
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            color: white;
+            background-color: blue;
+        }
+        .up textarea{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+     <h1>Update your chats</h1>
+    <div class="up">
+   
+    <p>id:<%=find.id%></p>
+    <p>your name:<%=find.from%></p>
+    <form method="post" action="/chats/<%=find.id%>">
+    <textarea name="message"><%=find.message%></textarea>
+    <br><br>
+    <button>submit</button>
+    </form>
+    </div>
+</body>
+</html>

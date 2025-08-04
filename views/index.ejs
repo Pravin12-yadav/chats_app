@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Data</title>
+    <style>
+        .chats {
+            background-color: rgb(255, 136, 0);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .chats p {
+            font-size: 20px;
+            color: white;
+        }
+
+        .chats p span {
+            font-weight: 900;
+            color: black
+        }
+
+        .btn {
+            margin-top: 50px;
+            margin-left: 200px;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: white;
+            width: 200px;
+            height: 50px;
+            background-color: blueviolet;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+
+        }
+
+        .btnn a {
+            text-decoration: none;
+            color: white;
+            width: 400px;
+            height: 20px;
+            background-color: blueviolet;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .btnn button{
+            width: 100px;
+            height: 50px;
+            color:white;
+            background-color: blueviolet;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>All Chats are:</h1>
+    <% for(a of all){ %>
+        <div class="chats">
+            <p><span>from:</span>
+                <%=a.from%>
+            </p>
+            <p><span>to:</span>: <%=a.to%>
+            </p>
+            <p><span>message:</span>
+                <%=a.message%>
+            </p>
+            <p><span>created_at:</span>
+                <%=a.created_at%>
+            </p>
+            <div class="btnn">
+                <a href="/chats/<%=a.id%>/edit">edit</a>
+                <br><br>
+                <form method="post" action="/chats/<%=a.id%>?_method=DELETE">
+                     <button>delete</button>
+                </form>
+            </div>
+        </div>
+        <% } %>
+            <div class="btn">
+                <a href="/chats/new">Create new chat</a>
+            </div>
+</body>
+
+</html>
